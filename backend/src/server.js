@@ -6,6 +6,7 @@ import { ENV } from "./config/env.js";
 import { connectDB } from "./config/db.js";
 import userRoutes from "./routes/user.route.js";
 import postRoutes from "./routes/post.route.js";
+import CommentRoutes from "./routes/comment.route.js";
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 });
 app.use("/api/users", userRoutes);
 app.use("/api/post", postRoutes);
+app.use("/api/comments", CommentRoutes);
 
 // Error handlingmiddleware
 app.use((err, req, res, next) => {
